@@ -158,8 +158,9 @@
     </div>
     <div class="container-1">
         <h2>Questionaire</h2>
-        <form id="multipage-form" action="#" method="post"></form>
-            <div id="page1" class="page" style="display:block;">
+        <button id="bntTest" type="button" class="btn btn-primary" onclick="showPage('page1')">Faites le test gratuitement</button>
+        <form id="multipage-form" action="#" method="post">
+            <div id="page1" class="page">
                 <h4>Section #1</h4>
                 <div class="mb-3">
                     <label for="question1" class="form-label">Question 1</label>
@@ -336,6 +337,19 @@
         </form>
 
         <script>
+
+            //make this function showPage('page1')
+            function showPage(pageId) {
+                const pages = document.getElementsByClassName('page');
+                for (let i = 0; i < pages.length; i++) {
+                    if (pages[i].id === pageId) {
+                        pages[i].style.display = 'block';
+                    } else {
+                        pages[i].style.display = 'none';
+                    }
+                }
+                document.getElementById('bntTest').style.display = 'none';
+            }
             document.getElementById('submitBtn').addEventListener('click', function () {
                 // Check if required fields are filled
                 const name = document.getElementById('name').value;
