@@ -162,87 +162,87 @@
         <button id="bntTest" type="button" class="btn btn-primary" onclick="showPage('page1')">Faites le test gratuitement</button>
         <form id="multipage-form">
             <div id="page1" class="page">
-                <h4>Section #1</h4>
-                <div class="mb-3">
-                    <label for="question1_1" class="form-label">Question 1</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question1_1" name="question1" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui" data-score="10" categorienumber="1">Oui</option>
-                        <option value="Non" data-score="5" categorienumber="1">Non</option>
-                        <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
-                    </select>
+                    <h4>Section #1</h4>
+                    <div class="mb-3">
+                        <label for="question1_1" class="form-label">Question 1</label>
+                        <span style="color: red"> *</span>
+                        <select class="form-select" id="question1_1" name="question1" required>
+                            <option value="" selected disabled hidden>Sélectionnez une option</option>
+                            <option value="Oui" data-score="10" categorienumber="1">Oui (ex. 10 pts)</option>
+                            <option value="Non" data-score="5" categorienumber="1">Non (ex. 5 pts)</option>
+                            <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="question2_1" class="form-label">Question 2</label>
+                        <span style="color: red"> *</span>
+                        <select class="form-select" id="question2_1" name="question2" required>
+                            <option value="" selected disabled hidden>Sélectionnez une option</option>
+                            <option value="Oui" data-score="10" categorienumber="1">Oui (ex. 10 pts)</option>
+                            <option value="Non" data-score="5" categorienumber="1">Non (ex. 5 pts)</option>
+                            <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
+                        </select>
+                    </div>
+                    <!-- Répétez ces deux blocs pour les questions suivantes jusqu'à la question 10 -->
+                    <div class="mb-3">
+                        <label for="question3_1" class="form-label">Question 3</label>
+                        <span style="color: red"> *</span>
+                        <select class="form-select" id="question3_1" name="question3" required>
+                            <option value="" selected disabled hidden>Sélectionnez une option</option>
+                            <option value="Oui" data-score="10" categorienumber="1">Oui (ex. 10 pts)</option>
+                            <option value="Non" data-score="5" categorienumber="1">Non (ex. 5 pts)</option>
+                            <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="question4_1" class="form-label">Question 4</label>
+                        <span style="color: red"> *</span>
+                        <select class="form-select" id="question4_1" name="question4" required>
+                            <option value="" selected disabled hidden>Sélectionnez une option</option>
+                            <option value="Oui" data-score="10" categorienumber="1">Oui (ex. 10 pts)</option>
+                            <option value="Non" data-score="5" categorienumber="1">Non (ex. 5 pts)</option>
+                            <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="nextPage()">Suivant</button>
                 </div>
-                <div class="mb-3">
-                    <label for="question2_1" class="form-label">Question 2</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question2_1" name="question2" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui" data-score="10" categorienumber="1">Oui</option>
-                        <option value="Non" data-score="5" categorienumber="1">Non</option>
-                        <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
-                    </select>
+                <div id="page2" class="page">
+                    <h4>Section #2</h4>
+                    <div class="mb-3">
+                        <label for="question1_2" class="form-label">Question 1</label>
+                        <span style="color: red"> *</span>
+                        <select class="form-select" id="question1_2" name="question1" required>
+                            <option value="" selected disabled hidden>Sélectionnez une option</option>
+                            <option value="Oui" data-score="10" categorienumber="2">Oui (10 pts)</option>
+                            <option value="Non" data-score="5" categorienumber="2">Non (5 pts)</option>
+                            <option value="Ne sais pas" data-score="0" categorienumber="2">Ne sais pas</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="question2_2" class="form-label">Question 2</label>
+                        <span style="color: red"> *</span>
+                        <select class="form-select" id="question2_2" name="question2" required>
+                            <option value="" selected disabled hidden>Sélectionnez une option</option>
+                            <option value="Oui" data-score="10" categorienumber="2">Oui (10 pts)</option>
+                            <option value="Non" data-score="5" categorienumber="2">Non (5 pts)</option>
+                            <option value="Ne sais pas" data-score="0" categorienumber="2">Ne sais pas</option>
+                        </select>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="previousPage()">Précédent</button>
+                    <button type="button" class="btn btn-primary" onclick="nextPage()">Suivant</button>
                 </div>
-                <!-- Répétez ces deux blocs pour les questions suivantes jusqu'à la question 10 -->
-                <div class="mb-3">
-                    <label for="question3_1" class="form-label">Question 3</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question3_1" name="question3" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui" data-score="10" categorienumber="1">Oui</option>
-                        <option value="Non" data-score="5" categorienumber="1">Non</option>
-                        <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="question4_1" class="form-label">Question 4</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question4_1" name="question4" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui" data-score="10" categorienumber="1">Oui</option>
-                        <option value="Non" data-score="5" categorienumber="1">Non</option>
-                        <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
-                    </select>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="nextPage()">Suivant</button>
-            </div>
-            <div id="page2" class="page">
-                <h4>Section #2</h4>
-                <div class="mb-3">
-                    <label for="question1_2" class="form-label">Question 1</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question1_2" name="question1" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui" data-score="10" categorienumber="2">Oui</option>
-                        <option value="Non" data-score="5" categorienumber="2">Non</option>
-                        <option value="Ne sais pas" data-score="0" categorienumber="2">Ne sais pas</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="question2_2" class="form-label">Question 2</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question2_2" name="question2" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui" data-score="10" categorienumber="2">Oui</option>
-                        <option value="Non" data-score="5" categorienumber="2">Non</option>
-                        <option value="Ne sais pas" data-score="0" categorienumber="2">Ne sais pas</option>
-                    </select>
-                </div>
-                <button type="button" class="btn btn-primary" onclick="previousPage()">Précédent</button>
-                <button type="button" class="btn btn-primary" onclick="nextPage()">Suivant</button>
-            </div>
-            <div id="page3" class="page" style="display: none;">
-                <h4>Section #3</h4>
-                <div class="mb-3">
-                    <label for="question2_3" class="form-label">Question 2</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question2_3" name="question2" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui" data-score="10" categorienumber="3">Oui</option>
-                        <option value="Non" data-score="5" categorienumber="3">Non</option>
-                        <option value="Ne sais pas" data-score="0" categorienumber="3">Ne sais pas</option>
-                    </select>
-                </div>
+                <div id="page3" class="page" style="display: none;">
+                    <h4>Section #3</h4>
+                    <div class="mb-3">
+                        <label for="question2_3" class="form-label">Question 2</label>
+                        <span style="color: red"> *</span>
+                        <select class="form-select" id="question2_3" name="question2" required>
+                            <option value="" selected disabled hidden>Sélectionnez une option</option>
+                            <option value="Oui" data-score="10" categorienumber="3">Oui (10 pts)</option>
+                            <option value="Non" data-score="5" categorienumber="3">Non (5 pts)</option>
+                            <option value="Ne sais pas" data-score="0" categorienumber="3">Ne sais pas</option>
+                        </select>
+                    </div>
                 <button type="button" class="btn btn-primary" onclick="previousPage()">Précédent</button>
                 <button type="button" class="btn btn-primary" onclick="showModal()">Soumettre</button>
             </div>
