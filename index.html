@@ -5,11 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graphique à Barres</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         .error {
             border-color: red;
@@ -143,6 +143,7 @@
     </nav>
     <div class="container">
         <!-- Canvas pour afficher le graphique -->
+        <h2>Exemple</h2>
         <canvas id="monGraphique" style="max-width: 500px; max-height:600px;"></canvas>
         <!-- Texte Lorem Ipsum à droite du graphique -->
         <div class="lorem-ipsum">
@@ -157,110 +158,50 @@
         </div>
     </div>
     <div class="container-1">
-        <h2>Questionaire</h2>
+        <h2 id="lblQuestion">Passer le test</h2>
         <button id="bntTest" type="button" class="btn btn-primary" onclick="showPage('page1')">Faites le test gratuitement</button>
         <form id="multipage-form">
             <div id="page1" class="page">
                 <h4>Section #1</h4>
                 <div class="mb-3">
-                    <label for="question1" class="form-label">Question 1</label>
+                    <label for="question1_1" class="form-label">Question 1</label>
                     <span style="color: red"> *</span>
-                    <select class="form-select" id="question1" name="question1" required>
+                    <select class="form-select" id="question1_1" name="question1" required>
                         <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
+                        <option value="Oui" data-score="10" categorienumber="1">Oui</option>
+                        <option value="Non" data-score="5" categorienumber="1">Non</option>
+                        <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="question2" class="form-label">Question 2</label>
+                    <label for="question2_1" class="form-label">Question 2</label>
                     <span style="color: red"> *</span>
-                    <select class="form-select" id="question2" name="question2" required>
+                    <select class="form-select" id="question2_1" name="question2" required>
                         <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
+                        <option value="Oui" data-score="10" categorienumber="1">Oui</option>
+                        <option value="Non" data-score="5" categorienumber="1">Non</option>
+                        <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
                     </select>
                 </div>
                 <!-- Répétez ces deux blocs pour les questions suivantes jusqu'à la question 10 -->
                 <div class="mb-3">
-                    <label for="question3" class="form-label">Question 3</label>
+                    <label for="question3_1" class="form-label">Question 3</label>
                     <span style="color: red"> *</span>
-                    <select class="form-select" id="question3" name="question3" required>
+                    <select class="form-select" id="question3_1" name="question3" required>
                         <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
+                        <option value="Oui" data-score="10" categorienumber="1">Oui</option>
+                        <option value="Non" data-score="5" categorienumber="1">Non</option>
+                        <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="question4" class="form-label">Question 4</label>
+                    <label for="question4_1" class="form-label">Question 4</label>
                     <span style="color: red"> *</span>
-                    <select class="form-select" id="question4" name="question4" required>
+                    <select class="form-select" id="question4_1" name="question4" required>
                         <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="question5" class="form-label">Question 5</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question5" name="question5" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="question6" class="form-label">Question 6</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question6" name="question6" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="question7" class="form-label">Question 7</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question7" name="question7" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="question8" class="form-label">Question 8</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question8" name="question8" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="question9" class="form-label">Question 9</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question9" name="question9" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
-                    </select>
-                </div>
-                <div class="mb-3">
-                    <label for="question10" class="form-label">Question 10</label>
-                    <span style="color: red"> *</span>
-                    <select class="form-select" id="question10" name="question10" required>
-                        <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
+                        <option value="Oui" data-score="10" categorienumber="1">Oui</option>
+                        <option value="Non" data-score="5" categorienumber="1">Non</option>
+                        <option value="Ne sais pas" data-score="0" categorienumber="1">Ne sais pas</option>
                     </select>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="nextPage()">Suivant</button>
@@ -268,23 +209,23 @@
             <div id="page2" class="page">
                 <h4>Section #2</h4>
                 <div class="mb-3">
-                    <label for="question1" class="form-label">Question 1</label>
+                    <label for="question1_2" class="form-label">Question 1</label>
                     <span style="color: red"> *</span>
-                    <select class="form-select" id="question1" name="question1" required>
+                    <select class="form-select" id="question1_2" name="question1" required>
                         <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
+                        <option value="Oui" data-score="10" categorienumber="2">Oui</option>
+                        <option value="Non" data-score="5" categorienumber="2">Non</option>
+                        <option value="Ne sais pas" data-score="0" categorienumber="2">Ne sais pas</option>
                     </select>
                 </div>
                 <div class="mb-3">
-                    <label for="question2" class="form-label">Question 2</label>
+                    <label for="question2_2" class="form-label">Question 2</label>
                     <span style="color: red"> *</span>
-                    <select class="form-select" id="question2" name="question2" required>
+                    <select class="form-select" id="question2_2" name="question2" required>
                         <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
+                        <option value="Oui" data-score="10" categorienumber="2">Oui</option>
+                        <option value="Non" data-score="5" categorienumber="2">Non</option>
+                        <option value="Ne sais pas" data-score="0" categorienumber="2">Ne sais pas</option>
                     </select>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="previousPage()">Précédent</button>
@@ -293,13 +234,13 @@
             <div id="page3" class="page" style="display: none;">
                 <h4>Section #3</h4>
                 <div class="mb-3">
-                    <label for="question2" class="form-label">Question 2</label>
+                    <label for="question2_3" class="form-label">Question 2</label>
                     <span style="color: red"> *</span>
-                    <select class="form-select" id="question2" name="question2" required>
+                    <select class="form-select" id="question2_3" name="question2" required>
                         <option value="" selected disabled hidden>Sélectionnez une option</option>
-                        <option value="Oui">Oui</option>
-                        <option value="Non">Non</option>
-                        <option value="Ne sais pas">Ne sais pas</option>
+                        <option value="Oui" data-score="10" categorienumber="3">Oui</option>
+                        <option value="Non" data-score="5" categorienumber="3">Non</option>
+                        <option value="Ne sais pas" data-score="0" categorienumber="3">Ne sais pas</option>
                     </select>
                 </div>
                 <button type="button" class="btn btn-primary" onclick="previousPage()">Précédent</button>
@@ -335,153 +276,11 @@
                 </div>
             </div>
         </form>
-
-        <script>
-
-            //make this function showPage('page1')
-            function showPage(pageId) {
-                const pages = document.getElementsByClassName('page');
-                for (let i = 0; i < pages.length; i++) {
-                    if (pages[i].id === pageId) {
-                        pages[i].style.display = 'block';
-                    } else {
-                        pages[i].style.display = 'none';
-                    }
-                }
-                document.getElementById('bntTest').style.display = 'none';
-            }
-            document.getElementById('submitBtn').addEventListener('click', function () {
-                // Check if required fields are filled
-                const name = document.getElementById('name').value;
-                const prenom = document.getElementById('prenom').value;
-                const email = document.getElementById('email').value;
-
-                if (name.trim() === '' || prenom.trim() === '' || email.trim() === '') {
-                    alert('Veuillez remplir tous les champs obligatoires.');
-                    if (name.trim() === '') {
-                        document.getElementById('name').classList.add('error');
-                    }
-                    if (prenom.trim() === '') {
-                        document.getElementById('prenom').classList.add('error');
-                    }
-                    if (email.trim() === '') {
-                        document.getElementById('email').classList.add('error');
-                    }
-                    return;
-                }
-
-                document.getElementById('multipage-form').submit();
-            });
-
-            function showModal() {
-                setTimeout(function () {
-                    $('#myModal').modal('show');
-                }, 500);
-            }
-
-            
-            function showErrorModal() {
-                setTimeout(function () {
-                    $('#errorModal').modal('show');
-                }, 500);
-            }
-
-            let currentPage = 1;
-            const form = document.getElementById('multipage-form');
-            const pages = form.getElementsByClassName('page');
-
-            function nextPage() {
-                if (currentPage < pages.length) {
-                    // Validate fields before changing page
-                    if (!validateFields()) {
-                        return;
-                    }
-                    pages[currentPage - 1].style.display = 'none';
-                    pages[currentPage].style.display = 'block';
-                    currentPage++;
-                }
-            }
-
-            function validateFields() {
-                const currentPageFields = pages[currentPage - 1].querySelectorAll('select[required]');
-                let isValid = true;
-
-                currentPageFields.forEach(field => {
-                    if (field.value.trim() === '') {
-                        field.classList.add('error');
-                        isValid = false;
-                    } else {
-                        field.classList.remove('error');
-                    }
-                });
-
-                if (!isValid) {
-                    showErrorModal();
-                }
-
-                return isValid;
-            }
-
-            function previousPage() {
-                if (currentPage > 1) {
-                    pages[currentPage - 1].style.display = 'none';
-                    pages[currentPage - 2].style.display = 'block';
-                    currentPage--;
-                }
-            }
-
-            // Données du graphique
-            const xValues = [
-                "CONFIDENCE EN SOI",
-                "MOTIVATION/ATTITUDE",
-                "MÉTHODE DE TRAVAIL",
-                "OBJECTION",
-                "PROSPECTION",
-                "ACCUEIL",
-                "QUALIFICATION",
-                "DÉMONSTRATION",
-                "CLOSING",
-                "FIDÉLISATION"
-            ];
-
-            const yValues = [75, 60, 80, 40, 70, 55, 65, 90, 50, 85];
-
-            // Vérifier et remplacer les valeurs "undefined" dans xValues
-            for (let i = 0; i < xValues.length; i++) {
-                if (typeof xValues[i] === 'undefined') {
-                    xValues[i] = "Label par défaut"; // Remplacer par un label par défaut
-                }
-            }
-
-            // Initialiser le graphique
-            new Chart("monGraphique", {
-                type: "bar",
-                data: {
-                    labels: xValues,
-                    datasets: [{
-                        label: "Performances",
-                        backgroundColor: "#ad1510", // Couleur des barres
-                        data: yValues // Valeurs des barres
-                    }]
-                },
-                options: {
-                    responsive: true, // Rendre le graphique réactif
-                    maintainAspectRatio: false, // Empêcher l'ajustement automatique de la taille
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                beginAtZero: true,
-                                stepSize: 10, // Intervalles de l'axe Y
-                                max: 100,
-                                callback: function (value, index, values) {
-                                    return value + "%";
-                                }
-                            }
-                        }]
-                    }
-                }
-            });
-            
-        </script>
+    </div>
+    <div id="yourResult" class="container" style="display: none; height: 300px;">
+        <h2>Vos résultats</h2>
+        <canvas id="resultGraphique"></canvas>
+    </div>
+    <script src="./lib/site.js"></script>
 </body>
 </html>
